@@ -50,7 +50,7 @@ describe('rollup-plugin-glimmer-redux', function() {
       return bundle.generate({ format: 'es' });
     }).then(({ code }) => {
       let result = fs.readFileSync(path.join(__dirname, 'samples', 'todos', 'result.js'), 'utf8');
-      assertEqualFiles(result, code);
+      assertEqualFiles(code, result);
     });
   });
 
@@ -66,7 +66,7 @@ describe('rollup-plugin-glimmer-redux', function() {
       return bundle.generate({ format: 'es' });
     }).then(({ code }) => {
       let result = fs.readFileSync(path.join(__dirname, 'samples', 'nested', 'result.js'), 'utf8');
-      assertEqualFiles(result, code);
+      assertEqualFiles(code, result);
     });
   });
 
@@ -166,11 +166,11 @@ describe('rollup-plugin-glimmer-redux', function() {
 });
 
 
-function assertEqualFiles(expected, actual) {
+function assertEqualFiles(actual, expected) {
   expected = removeLineBreaks(expected)
   actual = removeLineBreaks(actual)
 
-  assert.strictEqual(expected, actual);
+  assert.strictEqual(actual, expected);
 }
 
 function removeLineBreaks(str) {
