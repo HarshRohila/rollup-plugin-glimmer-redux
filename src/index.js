@@ -4,7 +4,7 @@ var Mapper = require('./mapper');
 var Resolver = require('./resolver');
 var Configuration = require('./configuration');
 var typescript = require('typescript');
-var replace = require('rollup-plugin-replace');
+var replace = require('@rollup/plugin-replace');
 
 var FileMapper = new Mapper();
 
